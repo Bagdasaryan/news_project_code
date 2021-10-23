@@ -1,6 +1,7 @@
 package com.example.feature_main
 
 import com.example.core_network.Endpoints
+import com.example.core_network.NewsApp
 import com.example.core_network.all_news.AllNewsGet
 import com.example.core_network.all_news.AllNewsResponse
 import io.reactivex.Single
@@ -18,7 +19,7 @@ class HomeProvider {
         println("Endpoint -> ${Endpoints.Alpha.link}")
 
         return Retrofit.Builder()
-            .baseUrl(Endpoints.Alpha.link)
+            .baseUrl(NewsApp().NewsAppEndpoint)
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
             .build().create(AllNewsGet::class.java)
