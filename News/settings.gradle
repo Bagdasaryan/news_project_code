@@ -8,3 +8,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "News"
 include ':app'
+include ':feature-main'
+include ':core-ui'
+include ':core-network'
