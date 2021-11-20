@@ -3,9 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/OwnProject/news_project_code/News/core-ui/src/main/res/layout/item_quiz.xml" value="0.23867753623188406" />
+        <entry key="..\:/OwnProject/news_project_code/News/core-ui/src/main/res/layout/item_quiz_finish.xml" value="0.25416666666666665" />
+        <entry key="..\:/OwnProject/news_project_code/News/core-ui/src/main/res/layout/layout_quiz_question.xml" value="0.2" />
         <entry key="..\:/OwnProject/news_project_code/News/core-ui/src/main/res/layout/toolbar.xml" value="0.25416666666666665" />
+        <entry key="..\:/OwnProject/news_project_code/News/feature-main/src/main/res/layout/activity_details_fragment.xml" value="0.25416666666666665" />
         <entry key="..\:/OwnProject/news_project_code/News/feature-main/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
-        <entry key="..\:/OwnProject/news_project_code/News/feature-main/src/main/res/layout/two_column_recycler.xml" value="0.264" />
+        <entry key="..\:/OwnProject/news_project_code/News/feature-main/src/main/res/layout/activity_home_fragment.xml" value="0.25416666666666665" />
+        <entry key="..\:/OwnProject/news_project_code/News/feature-main/src/main/res/layout/two_column_recycler.xml" value="0.4" />
+        <entry key="..\:/OwnProject/news_project_code/News/feature-main/src/main/res/menu/navigation_menu.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

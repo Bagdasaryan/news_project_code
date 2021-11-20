@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/quiz_finish_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#DCDCDC"
+    android:layout_marginTop="5dp"
+    >
+
+    <TextView
+        android:id="@+id/quiz_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="[Question: AAAA]"
+        android:textSize="20sp"
+        android:layout_marginTop="5dp"
+        android:textColor="#000"
+        />
+
+    <TextView
+        android:id="@+id/my_answer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="[Your answer: AAA]"
+        android:textSize="20sp"
+        android:layout_marginTop="5dp"
+        android:textColor="#000"
+        />
+
+    <TextView
+        android:id="@+id/right_answer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="[Right answer: BBB]"
+        android:textSize="20sp"
+        android:layout_marginTop="5dp"
+        android:textColor="#000"
+        />
+
+</LinearLayout>

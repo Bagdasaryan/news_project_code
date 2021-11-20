@@ -1,40 +1,51 @@
 package com.example.feature_main
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import android.widget.Toolbar
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.core_network.all_news.AllNewsResponse
-import com.example.core_network.all_news.NewsStruct
-import com.example.feature_main.recycler_two_columns.TwoColumnsAdapter
+import androidx.fragment.app.Fragment
+
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
-class HomeActivity : AppCompatActivity(), HomePresenter.View {
-    private var mPresenter: HomePresenter? = null
-    private var mRepository: HomeRepository? = null
+class HomeActivity : AppCompatActivity() {
+    var detailNewsTitle = ""
+    var detailNewsDescription = ""
+    var detailNewsIconLinc = ""
+
+    private fun loadFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fl_content, fragment)
+            .commit()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+        val toolbar = supportActionBar;
 
-        mPresenter = HomePresenter(this)
-        mRepository = HomeRepository(mPresenter!!)
+        loadFragment(HomeFragment.newInstance())
 
-        mRepository!!.getHomeNews()
-    }
+        val bottomNavigation = findViewById<BottomNavigationView>(R.id.fl_navigation)
 
-    override fun showListOfNews(news: AllNewsResponse) {
-        val recyclerView: RecyclerView = findViewById(R.id.all_news_recycler)
-        recyclerView.layoutManager = GridLayoutManager(this, 2)
-
-        val adapter = TwoColumnsAdapter(news.allNews!!, object: TwoColumnsAdapter.Callback {
-            override fun onItemClicked(item: NewsStruct) {
-                // Some code...
+        bottomNavigation.setOnItemSelectedListener { item ->
+            var fragment: Fragment
+            when (item.itemId) {
+                R.id.navigation_home -> {
+                    toolbar!!.title = "Home"
+                    fragment = HomeFragment()
+                    loadFragment(fragment)
+                    true
+                }
+//            R.id.navigation_dashboard -> {
+//                loadFragment(DashboardFragment().newInstance())
+//                return@OnNavigationItemSelectedListener true
+//            }
+//            R.id.navigation_notifications -> {
+//                loadFragment(NotificationsFragment().newInstance())
+//                return@OnNavigationItemSelectedListener true
+//            }
             }
-        })
-        recyclerView.adapter = adapter
+            false
+        }
     }
 }

@@ -6,6 +6,9 @@ enum class Endpoints(val link: String) {
     Production("")
 }
 
-class NewsApp {
-    val NewsAppEndpoint = Endpoints.Alpha.link
+enum class FileLocation(val location: String) {
+    QuizQuestionsEng("Bagdasaryan/news-project/main/QUIZ_QUESTIONS/QuizQuestionsEng.json")
 }
+
+val NewsAppEndpoint = Endpoints.Alpha.link
+val QuizAppEndpoint = Endpoints.Alpha.link

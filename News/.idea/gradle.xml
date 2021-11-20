@@ -11,9 +11,12 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/core-architecture" />
             <option value="$PROJECT_DIR$/core-network" />
+            <option value="$PROJECT_DIR$/core-repository" />
             <option value="$PROJECT_DIR$/core-ui" />
             <option value="$PROJECT_DIR$/feature-main" />
+            <option value="$PROJECT_DIR$/feature-quiz-questions" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
