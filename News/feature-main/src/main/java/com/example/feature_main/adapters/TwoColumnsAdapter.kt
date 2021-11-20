@@ -29,8 +29,8 @@ class TwoColumnsAdapter(var items: MutableList<NewsStruct>, val callback: Callba
 
         fun bind(item: NewsStruct) {
             val params = allNewsLayout.layoutParams
-            params.height = ((mSize.x) / 2) - 10
-            params.width = ((mSize.x) / 2) - 10
+            params.height = ((mSize.x) / 2) - 5
+            params.width = ((mSize.x) / 2) - 5
 
             allNewsTitle.text = item.newsTitle
             Picasso.get()

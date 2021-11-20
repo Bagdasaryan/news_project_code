@@ -1,15 +1,12 @@
-package com.example.feature_quiz_questions
+package com.example.feature_quiz_questions.adapters
 
-import android.graphics.Point
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.core_network.quiz_questions.QuizStruct
-import com.example.core_network.quiz_questions.QuizTypesStruct
+import com.example.feature_quiz_questions.R
 import com.example.feature_quiz_questions.model.QuizAnswersModel
 
 class QuizFinishAdapter(var items: MutableList<QuizAnswersModel>)

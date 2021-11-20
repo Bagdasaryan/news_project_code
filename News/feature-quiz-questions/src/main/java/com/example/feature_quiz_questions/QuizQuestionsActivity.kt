@@ -1,17 +1,15 @@
 package com.example.feature_quiz_questions
 
-import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.core_architecture.QUIZ_TYPE_CODE
 import com.example.core_network.quiz_questions.QuizResponse
 import com.example.core_network.quiz_questions.QuizStruct
-import com.example.core_network.quiz_questions.QuizTypesStruct
+import com.example.feature_quiz_questions.adapters.QuizFinishAdapter
 import com.example.feature_quiz_questions.model.QuizAnswersModel
 
 class QuizQuestionsActivity: AppCompatActivity(), QuizQuestionsPresenter.View {
@@ -87,7 +85,11 @@ class QuizQuestionsActivity: AppCompatActivity(), QuizQuestionsPresenter.View {
 
             timer = object: CountDownTimer(30000, 1000) {
                 override fun onTick(millisUntilFinished: Long) {
-                    tvTime!!.text = "00:${(millisUntilFinished/1000).toString()}"
+                    if(millisUntilFinished/1000 > 9) {
+                        tvTime!!.text = "00:${(millisUntilFinished/1000)}"
+                    } else {
+                        tvTime!!.text = "00:0${(millisUntilFinished/1000)}"
+                    }
                 }
                 override fun onFinish() {
                     incorrectlyAnsweredQuestions!!.add(QuizAnswersModel(
@@ -172,7 +174,16 @@ class QuizQuestionsActivity: AppCompatActivity(), QuizQuestionsPresenter.View {
         finishLayout!!.visibility = LinearLayout.VISIBLE
 
         val tvPointsFinish: TextView = findViewById(R.id.tvPointsFinish)
+        val tvResultCommentFinish: TextView = findViewById(R.id.tvResultCommentFinish)
+
         tvPointsFinish.text = "Your points ${points.toString()}"
+        tvResultCommentFinish.text = if((points*100)/quizList!!.size >= 90) {
+            "Wery good!!"
+        } else if((points*100)/quizList!!.size >= 50 && (points*100)/quizList!!.size < 90) {
+            "Normal!"
+        } else {
+            "Not good :("
+        }
 
         mRecyclerView.layoutManager = LinearLayoutManager(this)
 
